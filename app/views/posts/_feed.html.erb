@@ -1,9 +1,8 @@
 <% @posts.each do | post | %>
-
 <h1> <%= post.title %> </h1>
 <strong> <%= post.member.name if user_signed_in? %> </strong>
 <p> <%= post.body %> </p>
-  			<div class="">
+  			< class="">
   					<%= link_to post, class: "" do %>
   					  <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
   					<% end %>
@@ -15,3 +14,4 @@
             <% end %>
   			</div>
 <% end %>
+

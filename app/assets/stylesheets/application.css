@@ -13,3 +13,53 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+}
+
+ nav {
+  background-color: brown;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ footer {
+ background-color: brown;
+ position: relative;
+ bottom: 0;
+  height: 100px;
+  width: 100vw;
+ }
+
+.nav-brand {
+  font-size: 50px;
+  font-weight: 700;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: white;
+  position: relative;
+
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: calc(100vh - 200px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.label {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 18px;
+}
+
+.field {
+  display:flex;
+  justify-content: space-between;
+
+}
