@@ -1,0 +1,17 @@
+<% @posts.each do | post | %>
+
+<h1> <%= post.title %> </h1>
+<strong> <%= post.member.name if user_signed_in? %> </strong>
+<p> <%= post.body %> </p>
+  			<div class="">
+  					<%= link_to post, class: "" do %>
+  					  <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
+  					<% end %>
+  					<%= link_to edit_post_path(post), class: "" do %>
+  					  <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+  					<% end %>
+  					<%= link_to post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } do %>
+  							<span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+            <% end %>
+  			</div>
+<% end %>
