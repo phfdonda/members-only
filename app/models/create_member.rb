@@ -1,2 +1,0 @@
-class CreateMember < ApplicationRecord
-end
