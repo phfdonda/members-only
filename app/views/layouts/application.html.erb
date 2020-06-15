@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MembersOnly</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>MembersOnly</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
   <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
+  <% end %>
+  <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-<nav>
-  <div class="nav-brand">
-    Members Only!
+     <% end %>
+  <nav>
+    <div class="nav-brand">
+      Members Only!
   </nav>
-</div>
-    <%= yield %>
-    <footer>
-    </footer>
-  </body>
+  </div>
+  <%= yield %>
+  <footer>
+  </footer>
+</body>
+
 </html>

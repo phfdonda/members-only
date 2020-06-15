@@ -1,37 +1,37 @@
-
 <div class="container">
-<div class="in-container">
-<h2 class="title">Sign In</h2>
+  <div class="in-container">
+    <h2 class="title">Sign In</h2>
 
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="field">
-              <%= f.input :email,
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
+    <div class="field">
+      <%= f.input :email,
                 required: true,
                 wrapper: false,
                 autofocus: true,
                 input_html: { class: "input" },
                 label_html: { class: "label"} %>
-          </div>
+    </div>
 
-          <div class="field">
-              <%= f.input :password,
+    <div class="field">
+      <%= f.input :password,
                 required: true,
                 wrapper: false,
                 input_html: { class: "input" },
                 label_html: { class: "label"}  %>
-          </div>
+    </div>
 
-          <div class="field">
-              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-          </div>
+    <div class="field">
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
 
-          <div class="field">
-              <%= f.button :submit, "Log in", class:"button" %>
-          </div>
+    <div class="field">
+      <%= f.button :submit, "Log in", class:"button" %>
+    </div>
 
-        <% end %>
-        <br>
+    <% end %>
+    <br>
 
-        <%= render "devise/shared/links" %>
-        </div>
-        </div>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
