@@ -6,17 +6,17 @@
         <%= f.error_notification %>
 
       <div class="field">
-          <%= f.input :name, required:true, autofocus: true, wrapper: false, input_html: { class: "form-control" }, label_html: { class: "label" }%>
+          <%= f.input :name, required:true, autofocus: true, input_html: { class: "form-control" }, label_html: { class: "label" }%>
         </>
 
         <div class="field">
-          <%= f.input :email, autocomplete: "email",wrapper: false, input_html: { class: "form-control" }, label_html: { class: "label" } %>
+          <%= f.input :email, autocomplete: "email", wrapper: false, input_html: { class: "form-control" }, label_html: { class: "label" } %>
         </div>
 
-        <div class="field">
+        <div class="field text-muted">
           <%= f.input :password,
                       required: true,
-                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), wrapper: false, input_html: { class: "form-control" }, label_html: { class: "label" } %>
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), wrapper: false, input_html: { class: "form-control" }, label_html: { class: "label text-dark" } %>
         </div>
 
         <div class="field">
@@ -26,7 +26,7 @@
         </div>
 
         <div class="field">
-          <%= f.button :submit, "Sign up",class: "btn btn-primary" %>
+          <%= f.button :submit, "Sign up",class: "btn btn-primary mt-2" %>
         </div>
       <% end %>
 
