@@ -1,18 +1,19 @@
+# frozen_string_literal: true
+
 class MembersController < ApplicationController
-  before_action :set_member, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_member!, except: [:index, :show]
+  before_action :set_member, only: %i[show edit update destroy]
+  before_action :authenticate_member!, except: %i[index show]
 
   # GET /members
   # GET /members.json
   def index
-    @members = Member.all.order("created_at DESC")
+    @members = Member.all.order('created_at DESC')
     @member = Member.new
   end
 
   # GET /members/1
   # GET /members/1.json
-  def show
-  end
+  def show; end
 
   # GET /members/new
   def new
@@ -20,13 +21,12 @@ class MembersController < ApplicationController
   end
 
   # GET /members/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /members
   # POST /members.json
   def create
-    @member = members.build(member_params)
+    @member = Member.new(member_params)
 
     respond_to do |format|
       if @member.save
@@ -64,13 +64,14 @@ class MembersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_member
-      @member = member.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def member_params
-      params.require(:member).permit(:name, :email, :password, :password_confirmation)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_member
+    @member = member.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def member_params
+    params.require(:member).permit(:name, :email, :password, :password_confirmation)
+  end
 end
