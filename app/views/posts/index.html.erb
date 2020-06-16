@@ -1,14 +1,15 @@
 <section class="section ">
   <div class="container d-flex flex-column col-6">
-    <%= render 'form' %>
+    <%= render 'form' if member_signed_in? %>
     <%= render 'feed' %>
   </div>
 
 </section>
 <section class="d-flex justify-content-center">
-  <div>
+  <div class="d-flex flex-column">
     <% if member_signed_in? %>
-      <%= link_to 'Log out', destroy_member_session_path, method: :delete, class:'btn btn-secondary mt-3' %>
+      <p class="text-muted mt-3 mb-2">You are logged in as <%= current_member.name %> </p>
+      <%= link_to 'Log out', destroy_member_session_path, method: :delete, class:'btn btn-secondary' %>
     <% else %>
       <%= link_to 'Sign in', new_member_session_path, class:'btn btn-primary mt-3' %>
     <% end %>

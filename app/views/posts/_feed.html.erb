@@ -5,15 +5,14 @@
 <h6 class="text-muted"> <%= "Author: #{post.member.name}" if member_signed_in? %> </h6>
 <p class="card-text"> <%= post.body %> </p>
   			<div class="">
-  					<%= link_to post, class: "" do %>
-  					  <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
-  					<% end %>
-  					<%= link_to edit_post_path(post), class: "" do %>
-  					  <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-  					<% end %>
-  					<%= link_to post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } do %>
-  							<span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
-            <% end %>
+						<% if member_signed_in? && current_member.id == post.member_id %>
+  						<%= link_to edit_post_path(post), class: "" do %>
+  					  	<span class="icon"><i class="fa fa-pencil m-1" aria-hidden="true"></i></span>
+							<% end %>
+							<%= link_to post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } do %>
+									<span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+							<% end %>
+						<% end %>
           </div>
 </div>
 
