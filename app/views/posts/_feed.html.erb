@@ -1,8 +1,7 @@
 <% @posts.each do | post | %>
 <div class="card mt-3 p-4">
-
+<p class="text-muted"> <%= "Written by #{post.member.name}" if member_signed_in? %> </p>
 <h4 class="card-title"> <%= post.title %> </h4>
-<h6 class="text-muted"> <%= "Author: #{post.member.name}" if member_signed_in? %> </h6>
 <p class="card-text"> <%= post.body %> </p>
   			<div class="">
 						<% if member_signed_in? && current_member.id == post.member_id %>
