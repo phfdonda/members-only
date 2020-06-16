@@ -1,16 +1,30 @@
-# Re-former
+# Members Only!
 
 ## Description
 
-This app is a Rails project for the Microverse's RoR curriculum. We have practiced the new knowledge about forms helpers used in Rails.
+This app is a Rails project for the Microverse's RoR curriculum, following TOP curriculum for webdevelopment. We have practiced the new knowledge about simple forms, Devise usage for authentication and much more.
+
+## About the project
+
+Are you a veteran gossiper? Do you want to talk about other people without repercussions? You do, don't you, you naughty? So become a member now! Only members can see what other members have said, so talk dirt about anyone else - as long as they are not members!
+
+## Authorization
+
+This project used Devise to require a registration in order to see the author of any post. What would be the fun of making someone miserable if they can't hear what is being said about them, right? (Disclaimer: We're not endorsing bullying, this is irony - we know it can be lost in written words =P) The app will track the session's authentication, so it will know if the user is a member or not, showing the text to everyone, but the authorship only for members.
+
+## Screenshots
+
+### This screenshot shows the page when the user is logged out. You can see the content of the posts, but not their authors.
+
+![Page with user logged out](./screenshots/not-logged-in.jpg)
+
+### In here you can see that the author of the post can edit and delete their own posts, and also see the authorship of others, but not change a post that it's not their own. 
+
+![Page with user logged in](./screenshots/logged-in.jpg)
 
 ## Validations
 
-New objects need to pass the following validations:
-
-### Users
-- **Username** should be alphanumeric. The length should be equal to or less than 12.
-Before creating a user, you need to add a valid **email**.
+New objects need to pass the following validations created authomatically by Devise - that is, a minimum 6 characters requirement for passwords.
 
 ## Built With
 
@@ -24,7 +38,8 @@ Before creating a user, you need to add a valid **email**.
 - Ruby
 - Rails
 - Bundle
-- MySQL 3. **Note**: You can change the database in GemFile.
+- Devise
+- SQLite3. **Note**: You can change the database in GemFile.
 
 ### Installing
 
