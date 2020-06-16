@@ -14,9 +14,9 @@ This project used Devise to require a registration in order to see the author of
 
 ## Screenshots
 
-[Page with user logged out](~/screenshots/not-logged-in.jpg)
+[Page with user logged out](../screenshots/not-logged-in.jpg)
 
-[Page with user logged in](~/screenshots/logged-in.jpg)
+[Page with user logged in](../screenshots/logged-in.jpg)
 
 ## Validations
 
