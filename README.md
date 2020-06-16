@@ -30,6 +30,8 @@ New objects need to pass the following validations created authomatically by Dev
 
 - [Ruby](https://www.ruby-lang.org/en/) 2.7.0 - A programming language.
 - [Ruby on Rails](https://rubyonrails.org/) 6.0.3.1 - A Ruby framework for web development
+- Devise
+- Bootstrap
 
 ## Getting started
 
