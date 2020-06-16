@@ -12,7 +12,11 @@ Are you a veteran gossiper? Do you want to talk about other people without reper
 
 This project used Devise to require a registration in order to see the author of any post. What would be the fun of making someone miserable if they can't hear what is being said about them, right? (Disclaimer: We're not endorsing bullying, this is irony - we know it can be lost in written words =P) The app will track the session's authentication, so it will know if the user is a member or not, showing the text to everyone, but the authorship only for members.
 
+## Screenshots
 
+[Page with user logged out](~/screenshots/not-logged-in.jpg)
+
+[Page with user logged in](~/screenshots/logged-in.jpg)
 
 ## Validations
 
