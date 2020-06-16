@@ -5,3 +5,12 @@
     </div>
   </div>
 </section>
+<section class="d-flex justify-content-center">
+  <div>
+    <% if member_signed_in? %>
+      <%= link_to 'Log out', destroy_member_session_path, method: :delete, class:'btn btn-secondary' %>
+    <% else %>
+      <%= link_to 'Sign in', new_member_session_path, class:'btn btn-primary' %>
+    <% end %>
+  </div>
+</section>
