@@ -8,9 +8,9 @@
 <section class="d-flex justify-content-center">
   <div>
     <% if member_signed_in? %>
-      <%= link_to 'Log out', destroy_member_session_path, method: :delete, class:'btn btn-secondary' %>
+      <%= link_to 'Log out', destroy_member_session_path, method: :delete, class:'btn btn-secondary mt-3' %>
     <% else %>
-      <%= link_to 'Sign in', new_member_session_path, class:'btn btn-primary' %>
+      <%= link_to 'Sign in', new_member_session_path, class:'btn btn-primary mt-3' %>
     <% end %>
   </div>
 </section>
