@@ -1,7 +1,9 @@
 <% @posts.each do | post | %>
-<h1> <%= post.title %> </h1>
-<strong> <%= "Author: #{post.member.name}" if member_signed_in? %> </strong>
-<p> <%= post.body %> </p>
+<div class="card mt-3 p-4">
+
+<h4 class="card-title"> <%= post.title %> </h4>
+<h6 class="text-muted"> <%= "Author: #{post.member.name}" if member_signed_in? %> </h6>
+<p class="card-text"> <%= post.body %> </p>
   			<div class="">
   					<%= link_to post, class: "" do %>
   					  <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
@@ -14,3 +16,4 @@
             <% end %>
           </div>
 <% end %>
+</div>
