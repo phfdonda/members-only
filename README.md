@@ -14,7 +14,11 @@ This project used Devise to require a registration in order to see the author of
 
 ## Screenshots
 
+### This screenshot shows the page when the user is logged out. You can see the content of the posts, but not their authors.
+
 ![Page with user logged out](./screenshots/not-logged-in.jpg)
+
+### In here you can see that the author of the post can edit and delete their own posts, and also see the authorship of others, but not change a post that it's not their own. 
 
 ![Page with user logged in](./screenshots/logged-in.jpg)
 
