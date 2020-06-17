@@ -5,7 +5,7 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
-    @members = Member.all.order('created_at DESC')
+    @members = Member.member_list
     @member = Member.new
   end
 
