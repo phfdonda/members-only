@@ -9,17 +9,10 @@ class MembersController < ApplicationController
     @member = Member.new
   end
 
-  # GET /members/1
-  # GET /members/1.json
-  def show; end
-
   # GET /members/new
   def new
     @member = current_user.members.build
   end
-
-  # GET /members/1/edit
-  def edit; end
 
   # POST /members
   # POST /members.json
