@@ -1,36 +1,27 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_member!, except: [:index, :show]
+  before_action :set_post, only: %i[show edit update destroy]
+  before_action :authenticate_member!, except: %i[index show]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.post_list
     @post = Post.new
-  end
-
-  # GET /posts/1
-  # GET /posts/1.json
-  def show
   end
 
   # GET /posts/new
   def new
-    @post = current_user.posts.build
-  end
-
-  # GET /posts/1/edit
-  def edit
+    @post = current_member.posts.build
   end
 
   # POST /posts
   # POST /posts.json
   def create
-    @post = current_user.posts.build(post_params)
+    @post = current_member.posts.build(post_params)
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to root_path, notice: 'post was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Your post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -44,7 +35,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'post was successfully updated.' }
+        format.html { redirect_to @post, notice: 'Your post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -58,19 +49,20 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'post was successfully destroyed.' }
+      format.html { redirect_to posts_url, notice: 'Your post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = post.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:post)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
 end
